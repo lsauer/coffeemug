@@ -1,12 +1,14 @@
-
 #CoffeeMug - A concise, hands-on CoffeeScript Tutorial
 ##### *! Now delivered with a cup of hot Coffee*
 
 ---
 
 **author:** Lorenz *Lo* Sauer 2011 ( http://www.lsauer.com , @sauerlo), `CC-BY-SA 3`
+
 **description:** a concise tutorial for JavaScript, R or Python programmers.
+
 **about:** CoffeeScript (CS), released in 2010 by J. Ashkenas (@jashkenas), is dynamically typed, interpreted programming language. It is takes syntax inspirations from popular dynamic languages such as Haskell, JavaScript, Erlang, Perl, Python, Ruby and even YAML.
+
 **note:** 
 
 - the tutorial is an excerpt from a free book: http://www.lsauer.com/2012/05/scalable-web-application-development.html - which is to be released soon.
