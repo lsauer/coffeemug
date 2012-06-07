@@ -93,7 +93,7 @@
 	race = (winner, runners, others...) ->
 	  print winner, others
 
-####expands in JS to: `arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];`
+#####expands in JS to: `arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];`
 	  
 	  
 	  
