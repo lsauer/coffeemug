@@ -1,6 +1,6 @@
 
 #CoffeeMug - A concise, hands-on CoffeeScript Tutorial
-##### *! delivered with a cup of hot Coffee*
+##### *! Now delivered with a cup of hot Coffee*
 
 ---
 
@@ -16,9 +16,10 @@
 - share your mug of coffee!
 
 **todo:** Syntax highlighting, and inline code experiments
+
 ---
 
-**Following, the main aspects of CoffeeScript are demonstrated through short examples and accompanying notes.**
+*Following, the main aspects of CoffeeScript are demonstrated through short examples and accompanying notes.*
 
 ## 1.0 Basics
 ###1.1 Comments: via Hashes(`#`),similar to Python and Ruby
