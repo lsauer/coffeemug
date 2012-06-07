@@ -1,12 +1,12 @@
 
 #CoffeeMug - A concise, hands-on CoffeeScript Tutorial
-##### *! get it while its still hot*
+##### *! delivered with a cup of hot Coffee*
 
 ---
 
 **author:** Lorenz *Lo* Sauer 2011 ( http://www.lsauer.com , @sauerlo), `CC-BY-SA 3`
 **description:** a concise tutorial for JavaScript, R or Python programmers.
-**about:** 2010 released CoffeeScript (CS) is dynamically typed, interpreted programming language which takes syntax inspirations from popular languages such as Haskell, JavaScript, Erlang, Perl, Python, Ruby and even YAML.
+**about:** CoffeeScript (CS), released in 2010 by J. Ashkenas (@jashkenas), is dynamically typed, interpreted programming language. It is takes syntax inspirations from popular dynamic languages such as Haskell, JavaScript, Erlang, Perl, Python, Ruby and even YAML.
 **note:** 
 
 - the tutorial is an excerpt from a free book: http://www.lsauer.com/2012/05/scalable-web-application-development.html - which is to be released soon.
@@ -15,13 +15,14 @@
 - live editor and more information at: http://coffeescript.org/
 - share your mug of coffee!
 
+**todo:** Syntax highlighting, and inline code experiments
 ---
 
-Following the main aspects of CS are demonstrated through short examples and accompanying notes.
+**Following, the main aspects of CoffeeScript are demonstrated through short examples and accompanying notes.**
 
 ## 1.0 Basics
 ###1.1 Comments: via Hashes(`#`),similar to Python and Ruby
-  #This line is commented out
+	#This line is commented out
 	###
 	Block comment similar to the popular syntax: `/*...*/`
 	###
@@ -84,11 +85,14 @@ Following the main aspects of CS are demonstrated through short examples and acc
 	fill = (container, liquid = "coffee") -> ...
 ####'traditional' (i.e. bracketed) function invocation syntax
 	alert( Object.toString(c))
-####Arguments: splat-operator '...':
-#####in JS: `arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];`
+####Arguments: splat-operator `...`:
 	race = (winner, runners, others...) ->
 	  print winner, others
 
+- expands in JS to: `arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];`
+	  
+	  
+	  
 ####Closures: bracket-operator `(...)` as a closure wrapper
 	for filename in list
 	  do (filename) ->
@@ -109,8 +113,8 @@ Following the main aspects of CS are demonstrated through short examples and acc
 	list = [1, 2, 3, 4, 5]
 #####smart multiline expansion 
 	list =[1
-	2
-	3]
+	       2
+	       3]
 ####slices
 	numbers = [1,2,3,4,5]
 	alert [1,2,3,4,5][0...3] #1,2,3
@@ -137,7 +141,7 @@ Following the main aspects of CS are demonstrated through short examples and acc
 	  root:   Math.sqrt
 	  square: square
 	  cube:   (x) -> x * square x
-####JSON
+####JSON Syntax
 	singers = {Jagger: "Rock", Elvis: "Roll"}
 #####Sidenote: Resolving JS-reserved name conflicts
 	$('.account').attr class: 'active'
@@ -158,8 +162,10 @@ Following the main aspects of CS are demonstrated through short examples and acc
 
 	
 	
-#### ranges with `by` to define the step. conditions are possible
-	#in JS, similar results can be obtained through `forEach`, `map`, `filter`, `apply`
+#### Array-`ranges` with `by`, to define the step. conditions are possible
+
+- in JS, similar results can be obtained through `forEach`, `map`, `filter`, `apply`
+
 	countdown = x:(num for num in [10..1]), y:(num for num in [0..10] by 2)
 	#returns: `{'x':[10,9,8,7,6,5,4,3,2,1], 'y': [0,2,4,6,8,10]}`
 
@@ -186,7 +192,7 @@ Following the main aspects of CS are demonstrated through short examples and acc
 
 ##3.0 CoffeScript OPERATORS
 
-#####CS abolishes the transitive operator `==` turning it (`→`) into `===`
+- CS abolishes the transitive operator: `==` turns into (`→`) `===`
 ###3.1 Comparison:
 	# `== → === ; != → !== ; is → === , isnt → !===`
 
@@ -200,8 +206,12 @@ Following the main aspects of CS are demonstrated through short examples and acc
 	Account = (customer, cart) ->
 	  @customer = customer
 	  @cart = cart
-	  #JS: `Account = function(customer, cart) {`
-	  #`this.customer = customer;return this.cart = cart;};`
+
+####Expressing the example above as JavaScript, the code expands to:
+	Account = function(customer, cart) {
+          this.customer = customer; return this.cart = cart;
+	};
+
 ###3.3 `in` operator
 	# `of → in` ; `in` → has no JS equivalent, see below
 	winner = yes if pick in [47, 92, 13]
@@ -219,17 +229,17 @@ Following the main aspects of CS are demonstrated through short examples and acc
 	getattributeevenifMIA = starsystem.drawPlanet?().atmosphere?.constitution
 
 ####check for `b`'s existence and invoking b with window as an argument
-	a = b? window #JS: `a = typeof b === "function" ? b(window) : void 0;`
+	a = b? window #JS: a = typeof b === "function" ? b(window) : void 0;
 ####check for `b`'s existence assigning `b` or alternativly `window` 
-	a = b ? window  #JS:`a = typeof b !== "undefined" && b !== null ? b : window;`
+	a = b ? window  #JS:a = typeof b !== "undefined" && b !== null ? b : window;
 
 
 ###3.6 Operator overview
 
 <table>
       <tbody><tr><th>CoffeeScript</th><th>JavaScript</th></tr>
-      <tr><td><tt>`is`</tt></td><td><tt>===</tt></td></tr>
-      <tr><td><tt>`isnt`</tt></td><td><tt>!==</tt></td></tr>
+      <tr><td><tt>is</tt></td><td><tt>===</tt></td></tr>
+      <tr><td><tt>isnt</tt></td><td><tt>!==</tt></td></tr>
       <tr><td><tt>not</tt></td><td><tt>!</tt></td></tr>
       <tr><td><tt>and</tt></td><td><tt>&amp;&amp;</tt></td></tr>
       <tr><td><tt>or</tt></td><td><tt>||</tt></td></tr>
@@ -254,9 +264,10 @@ Following the main aspects of CS are demonstrated through short examples and acc
 
 ##4.0 Object oriented programming in CS
 
-####CS provides OOP via prototypal wrapping
-####CS provides *named classes*, *inheritance*
-####`super` invokes the superclass constructor
+- CS provides **OOP** via prototypal 'wrapping'
+- CS provides *named classes*, *inheritance*
+- `super` invokes the superclass constructor
+
 ###4.1 Classes
 	class Animal
 	  constructor: (@name) ->
@@ -278,9 +289,9 @@ Following the main aspects of CS are demonstrated through short examples and acc
 
 ###5.2 Function Binding: declaration and binding via the fat arrow *`=>`* operator
 
-  #event-closure is called in the DOM-context of the clicked element
-  $('.shopping_cart').bind 'click', (event) =>
-    @customer.purchase @cart
+	#event-closure is called in the DOM-context of the clicked element
+	$('.shopping_cart').bind 'click', (event) =>
+	@customer.purchase @cart
 
 ##5.0 Advanced CS
 
@@ -305,18 +316,18 @@ Following the main aspects of CS are demonstrated through short examples and acc
 
 ###5.3 Strings and Multiline strings
 ####Double-Quoted strings can extend over several lines (already shown) 
-####interpolation via #{...}
+####interpolation via `#{...}` (**Ruby**-like)
 	author = "Wittgenstein"
 	quote  = "A picture is a fact. -- #{ author }"
 
 	sentence = "#{ 22 / 7 } is a decent approximation of p"
-#####Heredoc syntax
+#####`Heredoc` syntax
 	html = """
 		   <strong>
 			 cup of coffeescript
 		   </strong>
 		   """
-	#JS: html = "<strong>\n  cup of coffeescript\n</strong>";
+	#**JS:** html = "<strong>\n  cup of coffeescript\n</strong>";
 
 ###5.3.1 Non-interpolated Multiline Comment Block
 	###
@@ -351,10 +362,13 @@ Following the main aspects of CS are demonstrated through short examples and acc
 		"And the error is ... #{error}"
 	)
 
+<br />
+	
 ---
-##**Comment**
+##**Tutorial comment**
 
 The tutorial is based on the great official tutorial provided by CoffeScript, and will be continuously improved by me and helpful others on github.
+
 You are hereby cordially invited to contribute :)
 
 ---
@@ -369,6 +383,7 @@ You are hereby cordially invited to contribute :)
 - overcomes Javascript pitfalls
 - slight performance increase through greater abstraction and encapsulation
 - limited additional CS compiler error checking
+
 ###**Cons:** 
 - harder to debug as the faulty Javascript code has to be traced back to CS
 - additional technology stack increases complexity
