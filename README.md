@@ -1,3 +1,4 @@
+
 #CoffeeMug - A concise, hands-on CoffeeScript Tutorial
 ##### *! Now delivered with a cup of hot Coffee*
 
@@ -5,7 +6,7 @@
 
 **author:** Lorenz *Lo* Sauer 2011 ( http://www.lsauer.com , @sauerlo), `CC-BY-SA 3`
 
-**description:** a concise tutorial for JavaScript, R or Python programmers.
+**description:** a concise tutorial for JavaScript, R or Python programmers
 
 **about:** CoffeeScript (CS), released in 2010 by J. Ashkenas (@jashkenas), is dynamically typed, interpreted programming language. It is takes syntax inspirations from popular dynamic languages such as Haskell, JavaScript, Erlang, Perl, Python, Ruby and even YAML.
 
@@ -92,7 +93,7 @@
 	race = (winner, runners, others...) ->
 	  print winner, others
 
-- expands in JS to: `arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];`
+####expands in JS to: `arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];`
 	  
 	  
 	  
@@ -103,7 +104,7 @@
 		  compile filename, contents.toString()
 
 
-###Implicit *Return* of the last line within a block-statement: i.e. `R`-like
+###Implicit `return` of the last line within a block-statement: i.e. *R*-like
 	grade = (student) ->
 	  if student.excellentWork
 		"A+"
@@ -169,8 +170,8 @@
 
 - in JS, similar results can be obtained through `forEach`, `map`, `filter`, `apply`
 
-	countdown = x:(num for num in [10..1]), y:(num for num in [0..10] by 2)
-	#returns: `{'x':[10,9,8,7,6,5,4,3,2,1], 'y': [0,2,4,6,8,10]}`
+  countdown = x:(num for num in [10..1]), y:(num for num in [0..10] by 2)
+  #####returns: `{'x':[10,9,8,7,6,5,4,3,2,1], 'y': [0,2,4,6,8,10]}`
 
 ###2.2 foreach loop:
 	ages = for key, val of [x: 10, y: 100]
@@ -193,9 +194,10 @@
 	  else go work	#default
 
 
-##3.0 CoffeScript OPERATORS
+##3.0 CoffeScript Operators
 
 - CS abolishes the transitive operator: `==` turns into (`→`) `===`
+
 ###3.1 Comparison:
 	# `== → === ; != → !== ; is → === , isnt → !===`
 
