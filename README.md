@@ -10,7 +10,7 @@
 
 **description:** a concise tutorial for JavaScript, R or Python programmers
 
-**about:** CoffeeScript (CS), released in 2010 by J. Ashkenas (@jashkenas), is dynamically typed, interpreted programming language. It is takes syntax inspirations from popular dynamic languages such as Haskell, JavaScript, Erlang, Perl, Python, Ruby and even YAML.
+**about:** CoffeeScript (CS), released in 2010 by J. Ashkenas (@jashkenas), is dynamically typed, interpreted programming language. CS takes syntax inspirations from popular dynamic languages such as Haskell, JavaScript, Erlang, Perl, Python, Ruby and even YAML.
 
 **note:** 
 
@@ -85,7 +85,8 @@
 ```coffeescript	
 	six = (one = 1) + (two = 2) + (three = 3) #results in `6`
 	alert [one, two, three, two * three]
-	
+```
+
 ####Conditions / conditional assignment:
 
 ```coffeescript	
@@ -108,6 +109,8 @@
 
 ```coffeescript	
 	square = (x) -> x * x
+```
+
 ####passing closures
 
 ```coffeescript	
@@ -141,8 +144,10 @@
 	  print winner, others
 ```
 
-#####expands in JS to: `arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];`
-	  
+#####expands after JavaScript transcompilation, to:
+```javascript
+    arguments[0], runners = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+```
 	  
 	  
 ####Closures: bracket-operator `(...)` as a closure wrapper
@@ -155,7 +160,7 @@
 ```
 
 
-###Implicit `return` of the last line within a block-statement: i.e. *R*-like
+###Implicit `return` of the last line within a block-statement: i.e. `R`-language like
 
 ```coffeescript	
 	grade = (student) ->
@@ -199,12 +204,14 @@
 ```
 
 
-####Bitlists (e.g. makes for well-readable WebGL-code)
+####Bitlists (increases readability of WebGL, etc.. -code)
 
 ```coffeescript	
 	bitlist = 
 	[ 1, 0
 	  0, 0 ]
+```
+
 ###1.7 JS's Bitwise operators: `| & ! ~ << >>`
 ###1.8 Trinity operator: Pythonian verbatim style
 
@@ -222,7 +229,6 @@
 
 ```coffeescript	
 	typeof friday !== "undefined" && friday !== null ? friday : {sue: jill}
-
 ```
 
 ###1.9 Objects:
@@ -266,6 +272,7 @@
 
 ```coffeescript	
 	alert food for food in foods when food isnt 'chocolate'
+```
 #### Loop nesting
 
 ```coffeescript	
@@ -278,9 +285,10 @@
 	globals = (name for name of window)[0...10]
 ```
 	
-#### Array-`ranges` with `by`, to define the step. conditions are possible
+#### Array-`ranges` with keyword `by`, to define the range-step. conditions are possible
 
 - in JS, similar results can be obtained through `forEach`, `map`, `filter`, `apply`
+
 ```coffeescript	
   countdown = x:(num for num in [10..1]), y:(num for num in [0..10] by 2)
   #returns: {'x':[10,9,8,7,6,5,4,3,2,1], 'y': [0,2,4,6,8,10]}
@@ -325,14 +333,14 @@
 
 ##3.0 CoffeScript Operators
 
-- CS abolishes the transitive operator: `==` turns into (`→`) `===`
+- CS abolishes the transitive or implicit equality operator: `==` turns into (`→`) `===`
 
 ###3.1 Comparison:
 	# `== → === ; != → !== ; is → === , isnt → !===`
 
 ###3.2 Boolean operators and aliases
-	# `not → ! ; and → && ; or → || ; bitwise: ~ | & << >> >>>`
-	# `on → true ; yes → true ; off→ false; no → false (YAML) ; unless ... → if(!...)`
+	# not → ! ; and → && ; or → || ; bitwise: ~ | & << >> >>>
+	# on → true ; yes → true ; off→ false; no → false (YAML) ; unless ... → if(!...)
 
 ###3.3 Conditional operators and *`@`* as `this-operator`
 
@@ -371,7 +379,7 @@
 ```
 
 
-###3.5 `Existential` Operator `?` and `?.`: overcomes JS's behavior for unassigned variables
+###3.5 `Existential` Operator `?` and `?.` overcomes JS's unassigned variable Errors
 
 ```coffeescript	
 	mindexists = true if mind? and not world?
@@ -379,7 +387,7 @@
 	footprints = yeti ? "bear"
 ```
 
-####OOP Existantial Operator  `?.` for methods and attributes; 'soaks up' *`undefined`* Errors
+####OOP: Existantial Operator  `?.` for methods and attributes; 'soaks up' *`undefined`* Errors
 
 ```coffeescript	
 	getattributeevenifMIA = starsystem.drawPlanet?().atmosphere?.constitution
@@ -434,7 +442,7 @@
 
 ##4.0 Object oriented programming in CS
 
-- CS provides **OOP** via prototypal 'wrapping'
+- CS provides **OOP** through prototypal '*wrapping*'
 - CS provides *named classes*, *inheritance*
 - `super` invokes the superclass constructor
 
@@ -531,7 +539,7 @@
 			 cup of coffeescript
 		   </strong>
 		   """
-	#**JS:** html = "<strong>\n  cup of coffeescript\n</strong>";
+	#in JS: html = "<strong>\n  cup of coffeescript\n</strong>";
 ```
 
 
