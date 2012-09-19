@@ -12,6 +12,8 @@
 
 **about:** CoffeeScript (CS), released in 2010 by J. Ashkenas (@jashkenas), is dynamically typed, interpreted programming language. CS takes syntax inspirations from popular dynamic languages such as Haskell, JavaScript, Erlang, Perl, Python, Ruby and even YAML.
 
+**release:** https://github.com/lsauer/coffeemug
+
 **note:** 
 
 - the tutorial is an excerpt from a free book: http://www.lsauer.com/2012/05/scalable-web-application-development.html - which is to be released soon.
